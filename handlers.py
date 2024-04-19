@@ -1,12 +1,14 @@
 import json
 import logging
-from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, ReplyKeyboardMarkup
+from telegram import Update
 from telegram.ext import CallbackContext, ConversationHandler
 from pathlib import Path
 import os
 
 # Logging
-logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', 
+                    level=logging.INFO)
+
 logger = logging.getLogger(__name__)
 
 # Open assets

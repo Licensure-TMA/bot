@@ -1,10 +1,7 @@
 from telegram.ext import (
     Updater,
     CommandHandler,
-    ConversationHandler,
-    MessageHandler,
-    Filters,
-    CallbackQueryHandler
+    ConversationHandler
 )
 import json
 import os
@@ -31,7 +28,7 @@ def main():
     start_handler = ConversationHandler(
         entry_points = [CommandHandler('start', start)],
         states = {
-            START: [MessageHandler(Filters.text & ~Filters.command, test)]
+            START: [CommandHandler('test', test)]
         },
         fallbacks = [CommandHandler('cancel', cancel)]
     )
