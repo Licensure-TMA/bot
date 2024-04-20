@@ -30,7 +30,7 @@ def main():
         states = {
             START: [CommandHandler('testjopy', test),
                     CommandHandler('testpisi', test),
-                    CommandHandler('test1', test)]
+                    CommandHandler('test', test)]
         },
         fallbacks = [CommandHandler('cancel', cancel)]
     )
