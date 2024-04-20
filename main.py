@@ -29,7 +29,8 @@ def main():
         entry_points = [CommandHandler('start', start)],
         states = {
             START: [CommandHandler('testjopy', test),
-                    CommandHandler('testpisi', test)]
+                    CommandHandler('testpisi', test),
+                    CommandHandler('test', test)]
         },
         fallbacks = [CommandHandler('cancel', cancel)]
     )
