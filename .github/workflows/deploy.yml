@@ -30,4 +30,4 @@ jobs:
 
       - name: Trigger deployment
         run: |
-          curl -m 5 -X POST http://34.132.21.201:80/webhook
+          curl -m 5 -X POST http://34.132.21.201/webhook
