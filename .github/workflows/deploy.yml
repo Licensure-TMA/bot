@@ -26,8 +26,8 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: aleksglebov/licensure:latest
+          tags: aleksglebov/licensure:bot
 
       - name: Trigger deployment
         run: |
-          curl -v -m 5 -X POST http://34.132.21.201/webhook
+          curl -v -m 5 -X POST http://34.132.21.201/webhook-bot

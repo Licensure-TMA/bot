@@ -4,10 +4,13 @@
 docker stop bot || true
 docker rm bot || true
 
+# Удалить старый образ
+docker rmi aleksglebov/licensure:bot || true
+
 # Получить последнюю версию образа из Docker Hub
-docker pull aleksglebov/licensure:latest
+docker pull aleksglebov/licensure:bot
 
 # Запустить новый контейнер
-docker run -d --name bot aleksglebov/licensure:latest
+docker run -d --name bot aleksglebov/licensure:bot
 
 echo "Deployment completed successfully."
