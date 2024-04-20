@@ -28,9 +28,6 @@ jobs:
           push: true
           tags: aleksglebov/licensure:latest
 
-  auto-deploy:
-    runs-on: ubuntu-latest
-    steps:
       - name: Trigger deployment
         run: |
-          curl -X POST http://34.132.21.201:80/webhook
+          curl -m 5 -X POST http://34.132.21.201:80/webhook
