@@ -30,4 +30,4 @@ jobs:
 
       - name: Trigger deployment
         run: |
-          curl -v -m 30 -X POST https://licensure.tech/webhook-bot
+          curl -v -m 30 -X POST https://licensure.tech/webhook-bot?token=${{ secrets.WEBHOOK_TOKEN }}
