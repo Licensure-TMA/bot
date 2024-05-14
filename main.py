@@ -28,7 +28,7 @@ def main():
     start_handler = ConversationHandler(
         entry_points = [CommandHandler('start', start)],
         states = {
-            START: [CommandHandler('test1', test)]
+            START: [CommandHandler('test', test)]
         },
         fallbacks = [CommandHandler('cancel', cancel)]
     )
