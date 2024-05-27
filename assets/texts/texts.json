@@ -1,9 +1,17 @@
 {
     "start_message": {
-        "русский": "Добро пожаловать в Licensure!"
+        "english": "*Welcome to Licensure!*\nStart monetizing your content with a Licensure!"
     },
 
-    "test": {
-        "русский": "Это просто тест!"
+    "read_rules": {
+        "english": "pass"
+    },
+
+    "for_menu": {
+        "english": "The bot is navigated through the menu at the bottom."
+    },
+    
+    "web_app_description": {
+        "english": "pass"
     }
 }

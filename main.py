@@ -1,7 +1,9 @@
 from telegram.ext import (
     Updater,
     CommandHandler,
-    ConversationHandler
+    ConversationHandler,
+    MessageHandler,
+    Filters
 )
 import json
 import os
@@ -9,7 +11,9 @@ from pathlib import Path
 from handlers import (
     START,
     start,
-    test,
+    menu_buttons,
+    read_rules,
+    web_app_description,
     cancel
 )
 
@@ -28,7 +32,9 @@ def main():
     start_handler = ConversationHandler(
         entry_points = [CommandHandler('start', start)],
         states = {
-            START: [CommandHandler('test1', test)]
+            START: [MessageHandler(Filters.text & ~Filters.command, menu_buttons),
+                    CommandHandler('rules', read_rules),
+                    CommandHandler('description', web_app_description)]
         },
         fallbacks = [CommandHandler('cancel', cancel)]
     )
