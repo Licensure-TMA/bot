@@ -1,0 +1,21 @@
+{
+    "start_message": {
+        "english": "*Welcome to Licensure!*\nStart monetizing your content with us!"
+    },
+
+    "read_rules": {
+        "english": "*Buying Licenses*\n\n1.🚀 Click the *Let's Go!* button to get started.**\n2. **🔐 Authenticate using one of the many supported TON wallets.**\n3. **🛍️ Browse through the offers on the P2P market and choose the one you like.**\n4. **💳 Click the *Buy* button and follow the on-screen instructions.**\n\n*Selling Licenses*\n\n1. **👤 Go to your profile by clicking on the profile icon.**\n2. **📢 Click the *Create Ad* button.**\n3. **📝 Fill in all the required fields.**\n4. **📣 Click the *Post Ad* button.**\n5. **🖥️ Follow the on-screen instructions.**\n\nLicensure makes it easy to find and trade the licenses you need. Join us today and experience seamless transactions in a secure and user-friendly environment! 🌐🔒"
+    },
+
+    "for_menu": {
+        "english": "The bot is navigated through the menu at the bottom👇"
+    },
+    
+    "description": {
+        "english": "Licensure - a peer-to-peer crypto platform enabling authors to monetize their media content by providing intellectual property for various purposes, including education, entertainment, advertising, neural network training, and mass media. 📈💡\n\nTailor your own terms and effortlessly transfer rights of use or ownership through smart contracts. 🔐✨"
+    },
+
+    "stop": {
+        "english": "You stopped the bot, to start it again enter - /start"
+    }
+}
