@@ -12,8 +12,6 @@ from handlers import (
     START,
     start,
     menu_buttons,
-    read_rules,
-    web_app_description,
     cancel
 )
 
@@ -32,9 +30,7 @@ def main():
     start_handler = ConversationHandler(
         entry_points = [CommandHandler('start', start)],
         states = {
-            START: [MessageHandler(Filters.text & ~Filters.command, menu_buttons),
-                    CommandHandler('rules', read_rules),
-                    CommandHandler('description', web_app_description)]
+            START: [MessageHandler(Filters.text & ~Filters.command, menu_buttons)]
         },
         fallbacks = [CommandHandler('cancel', cancel)]
     )

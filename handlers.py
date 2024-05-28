@@ -29,7 +29,7 @@ def start(update: Update, context: CallbackContext) -> int:
     photo_path = os.path.join(current_dir, 'assets/pictures/start_logo.png')
 
     with open(photo_path, 'rb') as photo_file:
-        context.bot.send_photo(chat_id=chat_id, photo=photo_file, caption=texts['start_message']['english'], parse_mode= "Markdown")
+        context.bot.send_photo(chat_id=chat_id, photo=photo_file, caption=texts['start_message']['english'], parse_mode="Markdown")
 
     menu_generator(update, context)
 
@@ -38,7 +38,7 @@ def start(update: Update, context: CallbackContext) -> int:
 def menu_generator(update: Update, context: CallbackContext):
     logger.info('menu_generator called')
 
-    keyboard = [['📖How to use it?', 'ℹ️Web Application Description', '🛑Stop the bot']]
+    keyboard = [['📖How to use it?', '📜Description', '🛑Stop']]
     reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=False)
     text = texts['for_menu']['english']
 
@@ -59,9 +59,9 @@ def menu_buttons(update: Update, context: CallbackContext):
     
     if text == "📖How to use it?":
         return read_rules(update, context)
-    elif text == "ℹ️Web Application Description":
-        return web_app_description(update, context)
-    elif text == "🛑Stop the bot":
+    elif text == "📜Description":
+        return description(update, context)
+    elif text == "🛑Stop":
         return cancel(update, context)
     else:
         # Обработка случая, когда текст не соответствует ни одному из условий
@@ -74,19 +74,21 @@ def cancel(update: Update, context: CallbackContext):
     
     context.user_data.clear()
     
+    update.message.reply_text(texts['stop']['english'], parse_mode="Markdown")
+
     return ConversationHandler.END
 
 # Func for How to use it?
 def read_rules(update: Update, context: CallbackContext):
     logger.info("read_rules called")
 
-    update.message.reply_text(texts['read_rules']['english'])
+    update.message.reply_text(texts['read_rules']['english'], parse_mode="Markdown")
 
     return START
 
-def web_app_description(update: Update, context: CallbackContext):
-    logger.info("web_app_description called")
+def description(update: Update, context: CallbackContext):
+    logger.info("description called")
 
-    update.message.reply_text(texts['web_app_description']['english'])
+    update.message.reply_text(texts['description']['english'], parse_mode="Markdown")
 
     return START
