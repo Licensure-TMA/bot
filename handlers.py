@@ -38,7 +38,7 @@ def start(update: Update, context: CallbackContext) -> int:
 def menu_generator(update: Update, context: CallbackContext):
     logger.info('menu_generator called')
 
-    keyboard = [['📖How to use it?', '📜Description', '🛑Stop']]
+    keyboard = [['📖How to use?', '📜Description', '🛑Stop']]
     reply_markup = ReplyKeyboardMarkup(keyboard, resize_keyboard=True, one_time_keyboard=False)
     text = texts['for_menu']['english']
 
@@ -57,7 +57,7 @@ def menu_buttons(update: Update, context: CallbackContext):
     text = update.message.text
 
     
-    if text == "📖How to use it?":
+    if text == "📖How to use?":
         return read_rules(update, context)
     elif text == "📜Description":
         return description(update, context)
@@ -77,7 +77,7 @@ def cancel(update: Update, context: CallbackContext):
 
     return ConversationHandler.END
 
-# Func for How to use it?
+# Func for How to use?
 def read_rules(update: Update, context: CallbackContext):
     logger.info("read_rules called")
 
